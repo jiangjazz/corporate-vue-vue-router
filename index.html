@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <title>corporate平台</title>
+    <meta name="keywords" content=" " />
+    <meta name="description" content="  " />
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+
+
+    <link rel="stylesheet" type="text/css" href="./dist/css/icon/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="./dist/css/semantic.css" />
+    <link rel="stylesheet" type="text/css" href="./dist/css/style.min.css" />
+
+    <style>
+    </style>
+</head>
+
+<body id="app">
+<!--nav-->
+<div class="m-nav">
+    <div class="logo">
+        <a href="#">
+            <img src="dist/images/corporate-logo.png" alt="corporate">
+        </a>
+    </div>
+    <div class="border-img"></div>
+    <ul class="nav">
+        <li class="item active">
+            <a class="title" v-link="{path: '/user/list'}">
+                <i class="icon logoIcon icons-user"></i>
+                <span class="content">
+                User
+                </span>
+            </a>
+        </li>
+        <li class="item">
+            <a class="title" href="#">
+                <i class="icon logoIcon icons-weixin"></i>
+                <span class="content">
+                Clients
+                </span>
+            </a>
+        </li>
+        <li class="item">
+            <a class="title" href="#">
+                <i class="icon logoIcon icons-sms"></i>
+                <span class="content">
+                Product
+                </span>
+                <i class="icon icons-arrowdown arrowIcon"></i>
+            </a>
+            <ul class="u-list">
+                <li>
+                    <a href="#">Email</a>
+                </li>
+                <li>
+                    <a href="#">SMS</a>
+                </li>
+                <li>
+                    <a href="#">Mrtb</a>
+                </li>
+                <li>
+                    <a href="#">SMG</a>
+                </li>
+                <li>
+                    <a href="#">Journey</a>
+                </li>
+            </ul>
+        </li>
+        <li class="item">
+            <a class="title" href="#">
+                <i class="icon logoIcon icons-dma"></i>
+                <span class="content">
+                Summary
+                </span>
+            </a>
+        </li>
+        <li class="item">
+            <a class="title" href="#">
+                <i class="icon logoIcon icons-msg"></i>
+                <span class="content">
+                Monitor
+                </span>
+            </a>
+        </li>
+        <li class="item">
+            <a class="title" href="#">
+                <i class="icon logoIcon icons-setting"></i>
+                <span class="content">
+                Account
+                </span>
+                <i class="icon icons-arrowdown arrowIcon"></i>
+            </a>
+            <ul class="u-list">
+                <li>
+                    <a href="#">账号管理</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<!--nav end-->
+
+
+<div class="m-body">
+    <!--head-->
+    <div class="m-head">
+        <div class="m-topic">
+            <div class="showNav">
+                <i class="icon icons-list"></i>
+            </div>
+            <div class="ui breadcrumb">
+                <i class="icon icons-position"></i>
+                <template v-if="title.second !== ''">
+                    <a class="section">{{title.first}}</a>
+                    <div class="divider">/</div>
+                    <div class="active section">{{title.second}}</div>
+                </template>
+                <template v-if="title.second === ''">
+                    <div class="active section">{{title.first}}</div>
+                </template>
+            </div>
+
+            <div class="userMsg f-fr">
+                <div class="name">
+                    <i class="icon icons-setting-2"></i>
+                    <span title="Janzen@webpowerchina.com">Janzen@webpowerchina.com</span>
+                    <i class="icon icons-arrowdown arrowIcon"></i>
+                </div>
+                <div class="actions">
+                    <div class="dropdown-list-header">
+                        <div class="stripeCt">
+                            <div class="stripe"></div>
+                        </div>
+                    </div>
+                    <div class="ui list">
+                        <div class="item">
+                            <i class="icon icons-user-2"></i>
+                            <div class="content">
+                                <a href="#">Profile</a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="icon icons-settings"></i>
+                            <div class="content">
+                                <a href="#">Settings</a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="icon icons-file"></i>
+                            <div class="content">
+                                <a href="#">File</a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <i class="icon icons-logout"></i>
+                            <div class="content">
+                                <a href="#">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--head end-->
+
+    <!--view-->
+    <div class="m-view">
+        <p><label>path: <br /></label>{{$route.path}}</p><br />
+        <p><label>params: <br /></label>{{$route.params | json}}</p><br />
+        <p><label>query: <br /></label>{{$route.query | json}}</p><br />
+        <p><label>router: <br /></label>{{$route.router}}</p><br />
+        <p><label>matched: <br /></label>{{$route.matched | json}}</p><br />
+        <p><label>matched: <br /></label>{{$route.matched[0].handler.fullPath}}</p><br />
+        <p><label>name: <br /></label>{{$route.name}}</p><br />
+        <br /><br /><br /><br /><br /><br />
+        <router-view></router-view>
+    </div>
+    <!--view end-->
+
+    <!--foot-->
+    <div class="m-foot f-tar">
+        Copyright © 2000 - 2016 by webpower
+    </div>
+    <!--foot end-->
+
+    <div class="m-navShade"></div>
+</div>
+
+<script src="./dist/js/plugins/vue/vue.js"></script>
+<script src="./dist/js/plugins/vue/vue-router.js"></script>
+<script src="./dist/js/plugins/jquery/jquery-1.11.1.min.js"></script>
+<script src="./dist/js/corporate.min.js"></script>
+</body>
+
+</html>

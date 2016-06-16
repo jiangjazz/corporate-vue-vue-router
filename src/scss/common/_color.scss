@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/**
+ * 颜色变量 （包括文字、背景、边框等）
+ */
+
+
+//文字类
+$default: #4c4f56;                  //正常文本
+$error: #ff6e5c;                    //错误文本
+$disabled: #d3d1e7;                 //不能点击
+$focus: #34495E;                    //获得焦点
+$info: #acacac;                     //正常提示类信息
+//背景色
+$bg_body: #f1f1f1;                  //body背景色
+$bg_default: #34495E;               //主题背景色
+$bg_focus: #2D3F51;                 //主题获得焦点
+$bg_info: #ccc;                     //正常信息背景色
+$bg_success: #0cc2aa;               //成功信息背景色
+$bg_error: #ff6e5c;                 //错误信息背景色
+$bg_warning: #f0ad4e;               //警告信息背景色
+$bg_disabled: #f3f2f8;               //disabled元素背景色
+
+$bg_shade: rgba(0, 0, 0, 0.15);     //透明背景色 弹层等使用
+
+//边框
+$bc_default: #262626;               //默认普通边框
+$bc_default_focus: #435D78;         //默认边框活得焦点
+$bc_error: #ff6e5c;                 //错误信息边框
+
+//阴影
+$shadow: #e9e8f6;                   //普通阴影

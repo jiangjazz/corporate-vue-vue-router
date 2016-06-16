@@ -1,0 +1,86 @@
+@charset "UTF-8";
+/**
+ * animate生产
+ */
+//例子
+/* @include keyframes('icon-one') {
+    0% {
+        opacity: 1;
+    }
+    33% {
+        opacity: 0;
+    }
+    66% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+} */
+
+
+
+@include keyframes('tada') {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%, 20% {
+    -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@include keyframes('showList'){
+  0%{
+    height: 0;
+  }
+  100%{
+    height: 30px;
+  }
+}
+
+@include keyframes ('stripesCt') {
+  from {
+    width: 0;
+  }
+  30%{
+    width: 40%;
+  }
+  50%{
+    width: 50%;
+  }
+  60%{
+    width: 90%;
+  }
+  70%{
+    width: 100%;
+  }
+  to {
+    width: 100%;
+  }
+}
+@include keyframes ('stripes') {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}

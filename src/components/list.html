@@ -1,0 +1,52 @@
+<div class="m-block m-table">
+    <div class="ui search table-title">
+        <div class="ui icon input">
+            <input class="prompt" type="text" placeholder="Search clients..."> <i class="search icon"></i>
+        </div>
+        <div class="results"></div>
+        <button class="ui Small button right floated"><i class="icon plus"></i>
+            新建
+        </button>
+    </div>
+    <div class="tableCt">
+        <table class="ui celled table">
+            <thead>
+                <tr>
+                    <th>Clients</th>
+                    <th>License</th>
+                    <th>Start Time</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        localhost
+                    </td>
+                    <td>www.allinone.com/wechat</td>
+                    <td>2014-09-16 00:00</td>
+                    <td>Disable</td>
+                </tr>
+                <tr>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+                <tr>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="4">
+                        <my-paging :active-page="$route.query.page? parseInt($route.query.page): 1" :path="$route.matched[0].handler.fullPath" :max-page="10">5</my-paging>
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+/**
+ * list view 样式
+ */
+
+.m-block{
+    margin-bottom: 30px;
+    background: #fff;
+    @include border-radius(4px);
+    @include box-shadow(0px 3px 3px $shadow);
+}
+
+.m-table{
+    .table-title{
+        padding: 10px 20px;
+        background-color: $bg_default;
+        @include border-radius(4px 4px 0 0);
+    }
+    .tableCt{
+        padding: 20px;
+    }
+    .goPage{
+        display: inline-block;
+        input{
+            margin: 0 5px;
+            padding-left: .3em;
+            padding-right: .3em;
+            min-width: 2em;
+            max-width: 3em;
+            text-align: center;
+        }
+        .button{
+            margin: 0 5px 0 20px;
+        }
+    }
+}

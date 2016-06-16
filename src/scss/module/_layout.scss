@@ -1,0 +1,354 @@
+@charset "UTF-8";
+/******************************
+ * 首页样式
+ */
+%min-width{
+    min-width: 800px;
+}
+%navTitleArrow{
+    >a{
+        color: #fff;
+        &:before{
+            content: '';
+            margin-top: -5px;
+            width: 0;
+            height: 0;
+            border: 5px solid transparent;
+            border-right: 5px solid #fff;
+            position: absolute;
+            right: 0;
+            top: 50%;
+        }
+    }
+}
+/**
+ * 导航
+ */
+.m-nav{
+    width: 240px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border-right: 1px solid #fff;
+    background: $bg_default;
+    color: #fff;
+    overflow-x: hidden;
+    @include transition(all .3s ease);
+    @media screen and (max-width: 1000px) {
+        left: -240px;
+        z-index: 10;
+        &.active{
+            left: 0;
+        }
+    }
+    a{
+        color: #fff;
+    }
+    .logo{
+        padding: 10px 0;
+        font-size: 36px;
+        line-height: 1.5em;
+        text-align: center;
+        font-weight: bold;
+        font-style: italic;
+        background: black;
+        a{
+            display: block;
+            /* &:hover{
+                @include animation(tada 1s ease-in 0s 1 );
+            } */
+
+        }
+        img{
+            display: block;
+        }
+    }
+    .border-img{
+        margin: 9px 0;
+        height: 1px;
+        @include background-image(linear-gradient(left, transparent, #777, transparent));
+        overflow: hidden;
+    }
+    .item{
+        color: #fff;
+        .title{
+            color: #fff;
+            border-top: 1px solid transparent;
+            border-bottom: 1px solid transparent;
+        }
+        &.active{
+            @extend %navTitleArrow;
+            .title{
+                border-left-color: $bc_default_focus;
+            }
+            /* .title{
+                background: $bg_focus;
+            } */
+        }
+        &.slideDown{
+            background: $bg_focus;
+            .arrowIcon{
+                transform: rotate(180deg);
+            }
+            .u-list{
+                padding: 10px 0;
+                a{
+                    height: 30px;
+                    border-top: 1px solid transparent;
+                    border-bottom: 1px solid transparent;
+                }
+            }
+        }
+        &:hover{
+            @extend %navTitleArrow;
+        }
+    }
+    .title{
+        padding-left: 70px;
+        display: block;
+        border-left: 3px solid transparent;
+        font-size: 16px;
+        line-height: 2em;
+        position: relative;
+        &:hover{
+            border-top-color: $bc_default_focus;
+            border-bottom-color: $bc_default_focus;
+        }
+        span{
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-weight: 500;
+            line-height: 1.1;
+        }
+        .logoIcon{
+            margin-top: -0.5em;
+            width: 1em;
+            font-size: 20px;
+            line-height: 1em;
+            position: absolute;
+            left: 30px;
+            top: 50%;
+        }
+        .arrowIcon{
+            margin-top: -0.5em;
+            width: 1em;
+            font-size: 12px;
+            line-height: 1em;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            @include transition(all .3s ease);
+        }
+    }
+    .u-list{
+        overflow: hidden;
+        font-size: $f_size1;
+        background: #000;
+        @include transition(all .3s ease);
+        a{
+            height: 0px;
+            padding-left: 100px;
+            display: block;
+            line-height: 30px;
+            color: #fff;
+            @include transition(height .3s ease);
+            &.active{
+                color: #435D78;
+            }
+            &:hover{
+                color: #fff;
+                border-top-color: $bc_default_focus;
+                border-bottom-color: $bc_default_focus;
+            }
+        }
+    }
+}
+/**
+ * 内容
+ */
+.m-body{
+    position: absolute;
+    top: 0;
+    left: 240px;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    @include transition(all .3s ease);
+    @media screen and (max-width: 1000px) {
+        left: 0;
+        &.active{
+            left: 240px;
+            right: -240px;
+            .m-head,
+            .m-view,
+            .m-foot{
+                //right: -240px;
+            }
+        }
+    }
+}
+/**
+ * 头部
+ */
+.m-head{
+    @extend %min-width;
+    padding: 0 20px;
+    height: 70px;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    right: 0;
+    border-bottom: 1px solid $bc_default;
+    background: #000;
+    color: #fff;
+    line-height: 70px;
+    .icon{
+        display: inline;
+    }
+    .showNav{
+        display: none;
+        padding-right: 20px;
+        font-size: 18px;
+        cursor: pointer;
+        @media screen and (max-width: 1000px){
+            display: inline-block
+        }
+    }
+    .breadcrumb{
+        .icon{
+            font-size: $f_size5;
+        }
+        .divider{
+            color: #fff;
+        }
+        .section{
+            font-size: $f_size4;
+            &.active{
+                font-size: $f_size2;
+            }
+        }
+    }
+    .userMsg{
+        padding: 0 10px;
+        font-size: $f_size1;
+        position: relative;
+        z-index: 999;
+        border: 1px solid transparent;
+        .name{
+            cursor: pointer;
+            .arrowIcon{
+                transform: rotate(0deg);
+                @include transition(all .3s ease);
+            }
+        }
+        &:hover{
+            padding-bottom: 10px;
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            @include box-shadow(0 0 2px 0 rgba(0, 0, 0, 0.2));
+            .arrowIcon{
+                color: #000;
+                transform: rotate(180deg);
+            }
+            .name{
+                color: $info;
+            }
+            .actions{
+                height: 120px;
+            }
+            .stripeCt{
+                display: block;
+            }
+        }
+    }
+    .dropdown-list-header{
+        margin-bottom: 15px;
+        line-height: 1.5em;
+        @include border-radius(3px);
+        @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.4) inset);
+        overflow: hidden;
+        .stripeCt{
+            display: none;
+            width: 0%;
+            @include animation(stripesCt 4s linear 0s 1 both);
+        }
+        .stripe{
+            height: 7px;
+            @include background-image(linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent));
+            background-color: $bg_default;
+            background-size: 15px 15px;
+            @include animation(stripes 2s linear 0s infinite);
+        }
+    }
+    .actions{
+        height: 0;
+        color: $info;
+        line-height: 1.5em;
+        overflow: hidden;
+        @include transition(all .1s ease);
+        .list{
+            padding-left: 20px;
+        }
+        .item{
+            display: block;
+            margin-bottom: 5px;
+            padding: 5px 10px;
+            font-size: $f_size1;
+            a{
+                display: block;
+                width: 130px;
+                color: $info;
+            }
+            &:hover{
+                color: $focus;
+                a{
+                    color: $focus;
+                }
+            }
+        }
+    }
+}
+
+/**
+ * 内容
+ */
+.m-view{
+    @extend %min-width;
+    padding: 20px;
+    position: absolute;
+    top: 71px;
+    left: 0px;
+    right: 0;
+    bottom: 40px;
+    overflow-y: auto;
+}
+
+/**
+ * 尾部
+ */
+.m-foot{
+    @extend %min-width;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    right: 0;
+    border-top: 1px solid $bc_default;
+    font-size: $f_size1;
+    color: $info;
+    line-height: 40px;
+}
+
+
+/**
+ * 其他
+ */
+.m-navShade{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999900;
+}

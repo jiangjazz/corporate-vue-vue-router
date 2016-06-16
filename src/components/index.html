@@ -1,0 +1,12 @@
+<div>
+    <!-- <p>This is foo!</p> -->
+    <!-- <a v-link="{ path: '/foo/bar' }">Go to Bar</a> -->
+    <p>{{$route.path}}</p>
+    <div v-for="link in $router.app.links">
+        <a v-link="link">Go to {{link}}</a>
+    </div>
+    12312312
+    <router-view></router-view>
+</div>
+<script>
+</script>
